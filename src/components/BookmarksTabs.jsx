@@ -27,7 +27,7 @@ const BookmarksTabs = ({ bookmarks }) => {
             <div className="tabs mb-5 flex justify-center">
                 {catList.map((cat, index) => (
                     <div key={index} onClick={() => setCatActive(cat)} className={`tab tab-bordered  capitalize ${cat === catActive && "tab-active"}`}>
-                        <div className=" ">{cat}</div>
+                        <div className="font-semibold">{cat}</div>
                     </div>
                 ))}
             </div>

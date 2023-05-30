@@ -7,6 +7,7 @@ export const BookmarksContext = createContext({
     addBookmark: () => {},
     deleteBookmark: () => {},
     handleEditMode: () => {},
+    handleFavorite: () => {},
     editMode: false,
 });
 
@@ -58,11 +59,11 @@ function BookmarksContextProvider({ children }) {
     };
 
     // // FAVORIS
-    // const handleChecked = async (bookmarkId, isChecked) => {
-    //     await updateDoc(doc(db, "bookmarks", bookmarkId), {
-    //         isChecked: isChecked,
-    //     });
-    // };
+    const handleFavorite = async (bookmarkId, isFavorite) => {
+        await updateDoc(doc(db, "bookmarks", bookmarkId), {
+            isFavorite: isFavorite,
+        });
+    };
 
     const value = {
         bookmarks: bookmarks,
@@ -70,6 +71,7 @@ function BookmarksContextProvider({ children }) {
         deleteBookmark: deleteBookmark,
         editMode: editMode,
         handleEditMode: handleEditMode,
+        handleFavorite: handleFavorite,
         // cats: cats,
         // handleChecked: handleChecked,
     };
