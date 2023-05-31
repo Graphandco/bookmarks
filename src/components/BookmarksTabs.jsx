@@ -12,6 +12,9 @@ const BookmarksTabs = ({ bookmarks }) => {
     let catsToShow = bookmarks.filter(function (bookmark) {
         return bookmark.category?.includes(catActive) ? bookmark : "";
     });
+
+    // const showAllBookmarks
+
     catsToShow.sort(function (a, b) {
         if (a.name < b.name) {
             return -1;
@@ -25,6 +28,9 @@ const BookmarksTabs = ({ bookmarks }) => {
     return (
         <div className="container p-5 mx-auto">
             <div className="tabs mb-5 flex justify-center">
+                <div className={`tab tab-bordered  capitalize`}>
+                    <div className="font-semibold">Tous</div>
+                </div>
                 {catList.map((cat, index) => (
                     <div key={index} onClick={() => setCatActive(cat)} className={`tab tab-bordered  capitalize ${cat === catActive && "tab-active"}`}>
                         <div className="font-semibold">{cat}</div>
