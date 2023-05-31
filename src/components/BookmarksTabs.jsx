@@ -4,7 +4,7 @@ import BookmarkItem from "./BookmarkItem";
 
 const BookmarksTabs = ({ bookmarks }) => {
     // const { bookmarks } = useContext(BookmarksContext);
-    const [catActive, setCatActive] = useState("dev");
+    const [catActive, setCatActive] = useState("tous");
 
     let allCatList = bookmarks.map((item) => item.category).flat(1);
     const catList = [...new Set(allCatList)].sort();
@@ -28,7 +28,7 @@ const BookmarksTabs = ({ bookmarks }) => {
     return (
         <div className="container p-5 mx-auto">
             <div className="tabs mb-5 flex justify-center">
-                <div className={`tab tab-bordered  capitalize`}>
+                <div onClick={() => setCatActive("tous")} className={`tab tab-bordered capitalize ${catActive === "tous" && "tab-active"}`}>
                     <div className="font-semibold">Tous</div>
                 </div>
                 {catList.map((cat, index) => (
@@ -42,6 +42,13 @@ const BookmarksTabs = ({ bookmarks }) => {
                 {catsToShow.map((favorite) => (
                     <BookmarkItem key={favorite.id} bookmark={favorite} />
                 ))}
+                {catActive === "tous" && (
+                    <>
+                        {bookmarks.map((bookmark) => (
+                            <BookmarkItem key={bookmark.id} bookmark={bookmark} />
+                        ))}
+                    </>
+                )}
             </div>
         </div>
     );
