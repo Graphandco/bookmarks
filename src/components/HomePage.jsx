@@ -27,7 +27,7 @@ const Homepage = () => {
             <div className="container py-2 px-5 mx-auto">
                 <SearchBookmark searchText={searchText} setSearchText={setSearchText} />
                 {searchText.length === 0 && (
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-4 gap-3 mb-3">
                         {favorites.map((favorite) => (
                             <BookmarkItem key={favorite.id} bookmark={favorite} />
                         ))}

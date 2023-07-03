@@ -47,6 +47,7 @@ const BookmarkItem = ({ bookmark }) => {
             <CustomTag
                 href={link}
                 data-tip={description}
+                target="_blank"
                 className={`${
                     description && "tooltip"
                 } tooltip-primary backdrop-blur-sm bg-white/5 p-3 rounded-lg flex items-center justify-between gap-2 hover:bg-white/10`}

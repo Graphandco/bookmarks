@@ -17,9 +17,11 @@ const Header = () => {
                 <Link to="add" className="text-3xl text-primary hover:text-white">
                     <FaPlusCircle />
                 </Link>
-                <div onClick={handleEditMode} className={`text-3xl ${editMode ? "text-green-400" : "text-primary"}  hover:text-white cursor-pointer`}>
-                    {editMode ? <FaCheck /> : <FaPencilAlt />}
-                </div>
+                {user && (
+                    <div onClick={handleEditMode} className={`text-3xl ${editMode ? "text-green-400" : "text-primary"}  hover:text-white cursor-pointer`}>
+                        {editMode ? <FaCheck /> : <FaPencilAlt />}
+                    </div>
+                )}
                 <div className="w-10 rounded-full">
                     <Link to="profile">
                         {user?.photoURL ? (

@@ -32,7 +32,11 @@ const BookmarksTabs = ({ bookmarks }) => {
                     <div className="font-semibold">Tous</div>
                 </div>
                 {catList.map((cat, index) => (
-                    <div key={index} onClick={() => setCatActive(cat)} className={`tab tab-bordered  capitalize ${cat === catActive && "tab-active"}`}>
+                    <div
+                        key={index}
+                        onClick={() => setCatActive(cat)}
+                        className={`tab tab-bordered hover:border-opacity-100 capitalize ${cat === catActive && "tab-active"}`}
+                    >
                         <div className="font-semibold">{cat}</div>
                     </div>
                 ))}

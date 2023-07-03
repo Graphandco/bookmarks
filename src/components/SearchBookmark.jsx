@@ -25,7 +25,8 @@ const SearchBookmark = ({ searchText, setSearchText }) => {
     const results = bookmarks.filter((bookmark) => {
         normalizeText(searchText);
         const normalizedBookmarkName = normalizeText(bookmark.name);
-        return normalizedBookmarkName.includes(searchText.toLowerCase()) ? bookmark : "";
+        const normalizedTagsName = normalizeText(bookmark.tags);
+        return normalizedBookmarkName.includes(searchText.toLowerCase()) || normalizedTagsName.includes(searchText.toLowerCase()) ? bookmark : "";
     });
 
     return (
