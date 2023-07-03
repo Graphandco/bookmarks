@@ -44,7 +44,7 @@ function BookmarksContextProvider({ children }) {
         await addDoc(collection(db, "bookmarks"), {
             name,
             link,
-            image,
+            // image,
             description,
             category,
             tags,

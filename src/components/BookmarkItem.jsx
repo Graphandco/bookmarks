@@ -52,7 +52,8 @@ const BookmarkItem = ({ bookmark }) => {
                 } tooltip-primary backdrop-blur-sm bg-white/5 p-3 rounded-lg flex items-center justify-between gap-2 hover:bg-white/10`}
             >
                 <div className="flex gap-2">
-                    <img src={image} alt="name" className="w-6 object-contain" />
+                    {/* <img src={image} alt="name" className="w-6 object-contain" /> */}
+                    <img src={`https://www.google.com/s2/favicons?domain=${link}&sz=128`} alt="name" className="w-6 object-contain" />
                     <div>{name}</div>
                 </div>
                 {editMode && (

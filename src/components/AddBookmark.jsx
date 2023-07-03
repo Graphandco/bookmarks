@@ -127,7 +127,7 @@ const AddBookmark = () => {
                             {isFavorite ? <FaHeart /> : <FaRegHeart />}
                         </div>
                     </div>
-                    <Upload setAvatarURL={setAvatarURL} />
+                    {/* <Upload setAvatarURL={setAvatarURL} /> */}
                     <div className="grid grid-cols-2 mt-3 justify-between gap-3">
                         <Link to="/">
                             <div className="btn btn-primary btn-outline w-full">Annuler</div>
